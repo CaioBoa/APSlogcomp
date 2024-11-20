@@ -65,7 +65,9 @@ class Parser:
                     else:
                         raise ValueError("',' ou '.' esperado após atribuição")
                 else:
-                    raise ValueError("'=' esperado após nome da variável")
+                    if self.tokenizer.next.tipo == "ENDLINE":
+                        self.tokenizer.selectNext()
+                        return Assignment(Var(var_name), None, var_type)
             else:
                 raise ValueError("Nome de variável esperado após tipo")
             

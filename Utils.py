@@ -3,7 +3,10 @@ from abc import ABC, abstractmethod
 class PrePro:
     @staticmethod
     def filter(source):
-        return source.lower()
+        import re
+        # Remover comentários que começam com '--' até o final da linha
+        filtered_str = re.sub(r'/\*.*?\*/', '', source, flags=re.DOTALL)
+        return filtered_str.lower()
 
 class variable:
     def __init__(self, type, value):

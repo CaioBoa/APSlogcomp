@@ -14,7 +14,7 @@ class Tokenizer:
         self.mapping = {
             "pedro": ("NUM", 1),  # Palavra-chave para número 1
             "caio": ("NUM", 2),  # Palavra-chave para número 2
-            "pizza": ("NUM", 3),  # Palavra-chave para número 3
+            "inferior": ("NUM", 3),  # Palavra-chave para número 3
             "tende": ("ASSIGN", "="),  # Palavra-chave para '='
             "camelo": ("OP", "+"),  # Operador de adição
             "trump": ("OP", "-"),  # Operador de subtração
