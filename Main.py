@@ -26,10 +26,6 @@ if __name__ == "__main__":
         # Avaliar o AST, passando a tabela de símbolos global
         ast.Evaluate(symbol_table)
 
-        # Verificar se 'main' foi chamado corretamente
-        if symbol_table.get("main") is None:
-            raise NameError("Função 'main' não definida")
-
     except Exception as e:
         print(f"Erro: {e}", file=sys.stderr)
         sys.exit(1)

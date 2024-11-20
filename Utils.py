@@ -101,3 +101,69 @@ class NoOp(Node):
 
     def Evaluate(self, symbol_table):
         return None
+    
+class BinOp(Node):
+    def __init__(self, value, left, right):
+        super().__init__(value)
+        self.children = [left, right]
+
+    def Evaluate(self, symbol_table):
+        left = self.children[0].Evaluate(symbol_table)
+        right = self.children[1].Evaluate(symbol_table)
+        left_value = left.value
+        left_type = left.type
+        right_value = right.value
+        right_type = right.type
+
+        result = 0
+
+        if left_type == "str":
+            right_value = str(right_value)
+        elif right_type == "str":
+            left_value = str(left_value)
+        
+        if self.value == "&&":
+            if left_type == "str" or right_type == "str":
+                raise TypeError("Operação inválida")
+            result = int(left_value and right_value)
+        elif self.value == "||":
+            if left_type == "str" or right_type == "str":
+                raise TypeError("Operação inválida")
+            result = int(left_value or right_value)
+        elif self.value == "==":
+            if (left_type == "str" and right_type == "int") or (left_type == "int" and right_type == "str"):
+                raise TypeError("Operação inválida")
+            result = int(left_value == right_value)
+        elif self.value == "!=":
+            if left_type == "str" or right_type == "str":
+                raise TypeError("Operação inválida")
+            result = int(left_value != right_value)
+        elif self.value == "<":
+            if (left_type == "str" and right_type == "int") or (left_type == "int" and right_type == "str"):
+                raise TypeError("Operação inválida")
+            result = int(left_value < right_value)
+        elif self.value == ">":
+            if (left_type == "str" and right_type == "int") or (left_type == "int" and right_type == "str"):
+                raise TypeError("Operação inválida")
+            result = int(left_value > right_value)
+        elif self.value == "<=":
+            if left_type == "str" or right_type == "str":
+                raise TypeError("Operação inválida")
+            result = int(left_value <= right_value)
+        elif self.value == ">=":
+            if left_type == "str" or right_type == "str":
+                raise TypeError("Operação inválida")
+            result = int(left_value >= right_value)
+
+        elif self.value == '+':
+            result = left_value + right_value
+        elif self.value == '-':
+            result = left_value - right_value
+        elif self.value == '*':
+            result = left_value * right_value
+        elif self.value == '/':
+            if right_value == 0:
+                raise ZeroDivisionError("Divisão por zero")
+            result = left_value // right_value
+
+        return variable(left.type, result)
