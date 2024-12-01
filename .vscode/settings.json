@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.py": "python",
+        "symbol_table.h": "c",
+        "type_traits": "c",
+        "stdio.h": "c"
+    }
+}

@@ -1,0 +1,14 @@
+Para aquele x poder calma.
+Parecer se esse x expressar nojo ou
+Para concordar se esse x ou. vez * 
+
+/// Teste para uso de while (loop infinito)
+
+*Tradução para C*
+{
+    int x = 0;
+    while (x < 5)
+    {
+        printf(x);
+    }
+}

@@ -1,0 +1,12 @@
+Para aquela x poder nada gato pois.
+aquela y poder pois cachorro nada.
+concordar se esse x esquecer esse y ou. *
+
+/// Print de operações booleanas
+
+*Tradução para C*
+{
+    str x = gato;
+    str y = cachorro;
+    printf(x == y);
+}

@@ -1,9 +1,10 @@
-Ontem estava assistindo um futebol taligado, flamengo e criciuma jogando pela copa do brasil maluco taligado o criciuma tende a ser inferior.
-Mas taligado tudo pode acontecer no futebol bolasie meteu logo um golaço que tende a ser um dos mais lindos que ja vi!
- maluco taligado num golaço? golaço de camelo maluco taligado.
-No final falei pra geral que duvidou que hoje o maluco bolasie é um dos melhores! um verdadeiro canalha.
+Para aquela jovem poder nada acaraje poder crocodilo felicidade pois .
+Concordar se essa jovem ou. *
 
--- int x;
--- x = 3;
--- int y = x + x;
--- print(y);
+/// Teste para uso de strings
+
+*Tradução para C*
+{
+    str jovem = "acaraje poder crocodilo felicidade";
+    printf(jovem)
+}
