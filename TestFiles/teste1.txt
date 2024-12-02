@@ -1,0 +1,12 @@
+Para que aquele homem viva em plenitude ele tem o poder de fazer o que for necessário a fim de buscar a felicidade.
+Esse homem dia sim dia não tem o dever de tentar, esse homem não deve desistir até realizar que não existe futuro em sua raiva.
+Portanto, concordar que se esse homem tem forças pra levantar ele deve ao menos tentar pode ser visto como um fato ou necessidade. *
+
+/// Teste para soma comum
+
+*Tradução para C*
+{
+    int homem = 2;
+    homem = homem + 1;
+    printf(homem)
+}

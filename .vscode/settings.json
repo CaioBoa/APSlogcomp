@@ -3,6 +3,7 @@
         "*.py": "python",
         "symbol_table.h": "c",
         "type_traits": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "typeinfo": "c"
     }
 }

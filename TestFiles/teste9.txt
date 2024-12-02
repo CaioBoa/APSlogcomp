@@ -1,0 +1,12 @@
+Para aquele jovem poder felicidade.
+aquele adulto poder felicidade.
+Concordar se essa jovem realizar esse adulto ou. *
+
+/// Teste para operações dentro do print
+
+*Tradução para C*
+{
+    int jovem = 2;
+    int adulto = 2;
+    printf(jovem + adulto)
+}
