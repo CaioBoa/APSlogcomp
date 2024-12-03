@@ -13,6 +13,8 @@ int at_start = 0;
 
 %option noyywrap
 %option caseless
+%option noinput
+%option nounput
 %x STRING
 
 %%

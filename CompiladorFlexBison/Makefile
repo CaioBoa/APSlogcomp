@@ -1,5 +1,5 @@
 # Nome do executável
-EXEC = my_language
+EXEC = code_tel
 
 # Compilador e flags
 CC = gcc

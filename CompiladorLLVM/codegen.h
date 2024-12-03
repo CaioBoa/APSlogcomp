@@ -6,12 +6,15 @@
 #include <llvm-c/Core.h>
 #include "nodes.h"
 
+typedef struct CodegenContext {
+    LLVMBasicBlockRef merge_block; // Bloco de continuação comum
+} CodegenContext;
+
 extern LLVMModuleRef module;
 extern LLVMBuilderRef builder;
 extern LLVMContextRef context;
 
 // Funções para gerar código LLVM IR
-void codegen_program(Node *root);
-LLVMValueRef codegen_node(Node *node);
+LLVMValueRef codegen_node(Node *node, CodegenContext *ctx);
 
 #endif // CODEGEN_H

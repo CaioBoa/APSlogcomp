@@ -600,9 +600,8 @@ int expectvar = 0;
 char *string_buffer = NULL;
 int at_start = 0;
 #line 603 "lex.yy.c"
-#define YY_NO_INPUT 1
 
-#line 606 "lex.yy.c"
+#line 605 "lex.yy.c"
 
 #define INITIAL 0
 #define STRING 1
@@ -663,6 +662,8 @@ extern int yywrap ( void );
 #endif
 
 #ifndef YY_NO_UNPUT
+    
+    static void yyunput ( int c, char *buf_ptr  );
     
 #endif
 
@@ -818,10 +819,10 @@ YY_DECL
 		}
 
 	{
-#line 20 "lexer.l"
+#line 18 "lexer.l"
 
 
-#line 825 "lex.yy.c"
+#line 826 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -881,152 +882,152 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 22 "lexer.l"
+#line 20 "lexer.l"
 { /* Ignora tudo após '///' */ }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 24 "lexer.l"
+#line 22 "lexer.l"
 { yylval.num = 0; return NUM; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 25 "lexer.l"
+#line 23 "lexer.l"
 { yylval.num = 1; return NUM; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 26 "lexer.l"
+#line 24 "lexer.l"
 { yylval.num = 2; return NUM; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 27 "lexer.l"
+#line 25 "lexer.l"
 { yylval.num = 3; return NUM; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 28 "lexer.l"
+#line 26 "lexer.l"
 { yylval.num = 4; return NUM; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 29 "lexer.l"
+#line 27 "lexer.l"
 { yylval.num = 5; return NUM; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 31 "lexer.l"
+#line 29 "lexer.l"
 { return ASSIGN; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 32 "lexer.l"
+#line 30 "lexer.l"
 { return ASSIGN; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 33 "lexer.l"
+#line 31 "lexer.l"
 { return OP_ADD; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 34 "lexer.l"
+#line 32 "lexer.l"
 { return OP_SUB; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 35 "lexer.l"
+#line 33 "lexer.l"
 { return OP_LT; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 36 "lexer.l"
+#line 34 "lexer.l"
 { return OP_GT; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 37 "lexer.l"
+#line 35 "lexer.l"
 { return OP_EQ; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 38 "lexer.l"
+#line 36 "lexer.l"
 { return OP_NE; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 40 "lexer.l"
+#line 38 "lexer.l"
 { expectvar = 1; return PREVAR; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 41 "lexer.l"
+#line 39 "lexer.l"
 { expectvar = 1; return PREVAR; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 43 "lexer.l"
+#line 41 "lexer.l"
 { return PRINT; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 45 "lexer.l"
+#line 43 "lexer.l"
 { yylval.str = strdup("int"); expectvar = 1; return TYPE; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 46 "lexer.l"
+#line 44 "lexer.l"
 { yylval.str = strdup("str"); expectvar = 1; return TYPE; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 48 "lexer.l"
+#line 46 "lexer.l"
 { return LPAREN; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 49 "lexer.l"
+#line 47 "lexer.l"
 { return RPAREN; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 50 "lexer.l"
+#line 48 "lexer.l"
 { return LBRACE; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 51 "lexer.l"
+#line 49 "lexer.l"
 { return RBRACE; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 52 "lexer.l"
+#line 50 "lexer.l"
 { return RBRACE; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 54 "lexer.l"
+#line 52 "lexer.l"
 { return IF; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 55 "lexer.l"
+#line 53 "lexer.l"
 { return ELSE; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 56 "lexer.l"
+#line 54 "lexer.l"
 { return ELSEIF; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 57 "lexer.l"
+#line 55 "lexer.l"
 { return WHILE; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 59 "lexer.l"
+#line 57 "lexer.l"
 {
     BEGIN STRING;
     at_start = 1;
@@ -1038,12 +1039,12 @@ YY_RULE_SETUP
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 68 "lexer.l"
+#line 66 "lexer.l"
 { return ENDLINE; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 70 "lexer.l"
+#line 68 "lexer.l"
 {
     if (expectvar) {
         expectvar = 0;
@@ -1054,19 +1055,19 @@ YY_RULE_SETUP
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 78 "lexer.l"
+#line 76 "lexer.l"
 { yylval.num = atoi(yytext); return NUM; }
 	YY_BREAK
 case 34:
 /* rule 34 can match eol */
 YY_RULE_SETUP
-#line 80 "lexer.l"
+#line 78 "lexer.l"
 { }
 	YY_BREAK
 case 35:
 /* rule 35 can match eol */
 YY_RULE_SETUP
-#line 82 "lexer.l"
+#line 80 "lexer.l"
 {
     if (at_start) {
         /* Ignora espaços em branco no início da string */
@@ -1084,7 +1085,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 97 "lexer.l"
+#line 95 "lexer.l"
 {
     BEGIN INITIAL;
     yylval.str = string_buffer;
@@ -1094,7 +1095,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 104 "lexer.l"
+#line 102 "lexer.l"
 {
     size_t len = string_buffer ? strlen(string_buffer) : 0;
     string_buffer = realloc(string_buffer, len + yyleng + 1);
@@ -1111,7 +1112,7 @@ YY_RULE_SETUP
 }
 	YY_BREAK
 case YY_STATE_EOF(STRING):
-#line 119 "lexer.l"
+#line 117 "lexer.l"
 {
     fprintf(stderr, "Erro: Fim de arquivo inesperado na string\n");
     exit(1);
@@ -1119,10 +1120,10 @@ case YY_STATE_EOF(STRING):
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 124 "lexer.l"
+#line 122 "lexer.l"
 ECHO;
 	YY_BREAK
-#line 1126 "lex.yy.c"
+#line 1127 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1457,6 +1458,43 @@ static int yy_get_next_buffer (void)
 }
 
 #ifndef YY_NO_UNPUT
+
+    static void yyunput (int c, char * yy_bp )
+{
+	char *yy_cp;
+    
+    yy_cp = (yy_c_buf_p);
+
+	/* undo effects of setting up yytext */
+	*yy_cp = (yy_hold_char);
+
+	if ( yy_cp < YY_CURRENT_BUFFER_LVALUE->yy_ch_buf + 2 )
+		{ /* need to shift things up to make room */
+		/* +2 for EOB chars. */
+		int number_to_move = (yy_n_chars) + 2;
+		char *dest = &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[
+					YY_CURRENT_BUFFER_LVALUE->yy_buf_size + 2];
+		char *source =
+				&YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[number_to_move];
+
+		while ( source > YY_CURRENT_BUFFER_LVALUE->yy_ch_buf )
+			*--dest = *--source;
+
+		yy_cp += (int) (dest - source);
+		yy_bp += (int) (dest - source);
+		YY_CURRENT_BUFFER_LVALUE->yy_n_chars =
+			(yy_n_chars) = (int) YY_CURRENT_BUFFER_LVALUE->yy_buf_size;
+
+		if ( yy_cp < YY_CURRENT_BUFFER_LVALUE->yy_ch_buf + 2 )
+			YY_FATAL_ERROR( "flex scanner push-back overflow" );
+		}
+
+	*--yy_cp = (char) c;
+
+	(yytext_ptr) = yy_bp;
+	(yy_hold_char) = *yy_cp;
+	(yy_c_buf_p) = yy_cp;
+}
 
 #endif
 
@@ -2090,7 +2128,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 124 "lexer.l"
+#line 122 "lexer.l"
 
 
 

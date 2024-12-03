@@ -14,7 +14,7 @@ SOURCES = lex.yy.c parser.tab.c nodes.c symbol_table.c codegen.c main.c
 OBJECTS = $(SOURCES:.c=.o)
 
 # Arquivo executável
-EXECUTABLE = my_language
+EXECUTABLE = code_tel
 
 # Regras principais
 all: check-tools $(EXECUTABLE)

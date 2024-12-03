@@ -184,13 +184,9 @@ statement:
     }
     | IF LPAREN expression RPAREN block elseif_list
     {
-        $$ = create_node("IfElseIf", NULL, create_node("If", NULL, $3, $5), $6);
-    }
-    | IF LPAREN expression RPAREN block elseif_list ELSE block
-    {
-        Node *else_node = create_node("Else", NULL, $8, NULL);
-        Node *elseif_node = create_node("IfElseIf", NULL, create_node("If", NULL, $3, $5), $6);
-        $$ = create_node("IfElseIf", NULL, elseif_node, else_node);
+        Node *if_node = create_node("If", NULL, $3, $5);
+        if_node->next = $6;
+        $$ = if_node;
     }
     | WHILE LPAREN expression RPAREN block
     {
@@ -202,7 +198,13 @@ elseif_list:
     ELSEIF LPAREN expression RPAREN block elseif_list
     {
         Node *elseif_node = create_node("ElseIf", NULL, $3, $5);
-        $$ = create_node("IfElseIf", NULL, elseif_node, $6);
+        elseif_node->next = $6;
+        $$ = elseif_node;
+    }
+    | ELSE block
+    {
+        Node *else_node = create_node("Else", NULL, NULL, $2);
+        $$ = else_node;
     }
     | /* vazio */
     {

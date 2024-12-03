@@ -1,5 +1,5 @@
-from CompiladorPython.Tokenizer import Tokenizer
-from CompiladorPython.Utils import IntVal, Var, Block, Assignment, Print, StrVal, BinOp, While, If
+from Tokenizer import Tokenizer
+from Utils import IntVal, Var, Block, Assignment, Print, StrVal, BinOp, While, If
 
 class Parser:
     def __init__(self, tokenizer):

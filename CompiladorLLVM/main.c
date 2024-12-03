@@ -35,6 +35,8 @@ int main() {
     module = LLVMModuleCreateWithNameInContext("my_module", context);
     builder = LLVMCreateBuilderInContext(context);
 
+    CodegenContext ctx = {0};
+
     // Cria a função 'main' e um bloco básico inicial
     LLVMTypeRef main_type = LLVMFunctionType(LLVMInt32TypeInContext(context), NULL, 0, 0);
     LLVMValueRef main_function = LLVMAddFunction(module, "main", main_type);
@@ -53,7 +55,7 @@ int main() {
     }
 
     // Avalia a árvore de nós
-    codegen_node(program_root);
+    codegen_node(program_root, &ctx);
 
     LLVMBuildRet(builder, LLVMConstInt(LLVMInt32TypeInContext(context), 0, 0));
 

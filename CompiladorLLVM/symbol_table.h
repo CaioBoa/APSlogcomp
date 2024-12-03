@@ -2,11 +2,13 @@
 #define SYMBOL_TABLE_H
 
 #include <llvm-c/Core.h>
+#include "nodes.h"
 
 // Estrutura para representar uma entrada na tabela de símbolos
 typedef struct {
-    char *name;           // Nome da variável
-    LLVMValueRef value;   // Referência LLVM para o valor associado
+    char *name;
+    LLVMValueRef value;
+    ValueType type; // Adiciona o tipo aqui
 } Symbol;
 
 // Estrutura para representar a tabela de símbolos
@@ -22,8 +24,8 @@ extern SymbolTable *symbol_table;
 // Funções para manipular a tabela de símbolos
 SymbolTable *init_symbol_table();
 void free_symbol_table();
-void insert_symbol(const char *name, LLVMValueRef value);
-LLVMValueRef lookup_symbol(const char *name);
+void insert_symbol(const char *name, LLVMValueRef value, ValueType type);
+Symbol *lookup_symbol(char *name);
 
 #endif // SYMBOL_TABLE_H
 

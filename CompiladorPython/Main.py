@@ -1,8 +1,8 @@
 import sys
-from CompiladorPython.Utils import PrePro, Print
-from CompiladorPython.Parser import Parser
-from CompiladorPython.Tokenizer import Tokenizer
-from CompiladorPython.SymbolTable import SymbolTable
+from Utils import PrePro
+from Parser import Parser
+from Tokenizer import Tokenizer
+from SymbolTable import SymbolTable
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

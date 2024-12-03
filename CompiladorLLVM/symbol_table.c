@@ -24,7 +24,7 @@ void free_symbol_table() {
 }
 
 // Insere um símbolo na tabela
-void insert_symbol(const char *name, LLVMValueRef value) {
+void insert_symbol(const char *name, LLVMValueRef value, ValueType type) {
     if (!symbol_table) symbol_table = init_symbol_table();
     if (symbol_table->count >= symbol_table->capacity) {
         symbol_table->capacity *= 2;
@@ -32,15 +32,15 @@ void insert_symbol(const char *name, LLVMValueRef value) {
     }
     symbol_table->symbols[symbol_table->count].name = strdup(name);
     symbol_table->symbols[symbol_table->count].value = value;
+    symbol_table->symbols[symbol_table->count].type = type;
     symbol_table->count++;
 }
 
 // Procura um símbolo na tabela
-LLVMValueRef lookup_symbol(const char *name) {
-    if (!symbol_table) return NULL;
+Symbol *lookup_symbol(char *name) {
     for (int i = 0; i < symbol_table->count; i++) {
         if (strcmp(symbol_table->symbols[i].name, name) == 0) {
-            return symbol_table->symbols[i].value;
+            return &symbol_table->symbols[i];
         }
     }
     return NULL;

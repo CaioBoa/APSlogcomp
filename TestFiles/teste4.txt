@@ -1,4 +1,4 @@
-Para aquele x poder felicidade.
+Para aquele x poder nojo.
 Sempre se esse x encontrar tristeza ou
 Para concordar se nada PRINT pois ou. Vez nunca
 Para concordar se nada NOP pois ou. Vez *
@@ -7,7 +7,7 @@ Para concordar se nada NOP pois ou. Vez *
 
 *Tradução para C*
 {
-    int x = 2;
+    int x = 5;
     if (x > 3)
     {
         printf("PRINT");

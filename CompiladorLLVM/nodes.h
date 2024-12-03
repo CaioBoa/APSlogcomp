@@ -22,10 +22,11 @@ typedef struct {
 
 // Estrutura para representar um nó da AST
 typedef struct Node {
-    char *type;            // Tipo do nó (e.g., "IntVal", "BinOp", etc.)
-    Value *value;          // Valor associado ao nó (se aplicável)
-    struct Node *left;     // Filho esquerdo
-    struct Node *right;    // Filho direito
+    char *type;             // Tipo do nó (e.g., "ElseIf", "If", "Print", etc.)
+    Value *value;           // Valor associado ao nó, se houver
+    struct Node *left;      // Filho esquerdo (e.g., condição)
+    struct Node *right;     // Filho direito (e.g., bloco de execução)
+    struct Node *next;      // Próximo nó (e.g., próximo "ElseIf" ou "Else")
 } Node;
 
 // Funções para criar nós e valores
