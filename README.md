@@ -273,6 +273,17 @@ O código acima pode ser traduzido para o seguinte código em C:
     printf(homem)
 }
 ```
+## Vídeo de Explicação
 
+[Assista ao vídeo demonstrativo aqui](https://youtu.be/Gn_bO5Hm15M?si=v1hILJgHUHfdV_6z)
 
+Neste vídeo, apresentamos uma demonstração abrangente da **CodeTelling**, detalhando todo o processo de desenvolvimento e as funcionalidades da linguagem, assim como aplicações e demonstrações de uso.
+
+## Contato
+
+Caio Bôa - caioob - [caioob@al.insper.edu.br](mailto:caioob@al.insper.edu.br)
+
+Pedro Civita - pedrotpc - [pedrotpc@al.insper.edu.br](mailto:pedrotpc@al.insper.edu.br)
+
+---
 
