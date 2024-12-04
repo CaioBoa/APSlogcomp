@@ -1,5 +1,11 @@
 # CodeTelling - Linguagem de Programação
 
+## APS - Lógica Da Computação
+
+## Por Caio Bôa e Pedro Civita
+
+---
+
 **CodeTelling** é uma linguagem de programação que tem como objetivo proporcionar ao programador a possibilidade de escrever seu código em narrativas. Ou seja, permite escrever o código de forma que conte uma história ou represente um texto escolhido pelo programador. Sua proposta inicial surge da possibilidade de programar de forma quase encriptada em textos literários, possibilitando a escrita de código em meio a um livro, música, poema, etc.
 
 ## Funcionamento
