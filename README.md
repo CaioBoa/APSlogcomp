@@ -110,7 +110,7 @@ Através desses tokens é possível montar qualquer código em **CodeTelling** s
 ```EBNF
 <programa> ::= <bloco>
 
-<bloco> ::= "para" <declarações> "vez"
+<bloco> ::= "para" <declarações> "vez"|"*"
 
 <declarações> ::= <declarações> <declaração> | ε
 
@@ -127,15 +127,15 @@ Através desses tokens é possível montar qualquer código em **CodeTelling** s
 
 <atribuição_de_variável> ::= <PREVAR> <variável> <ASSIGN> <expressão>
 
-<declaração_print> ::= "concordar" "(" <expressão> ")"
+<declaração_print> ::= "concordar" "se" <expressão> "ou"
 
-<declaração_if> ::= "sempre" "(" <expressão> ")" <bloco> <lista_else_if>
+<declaração_if> ::= "sempre" "se" <expressão> "ou" <bloco> <lista_else_if>
 
-<lista_else_if> ::= "talvez" "(" <expressão> ")" <bloco> <lista_else_if>
+<lista_else_if> ::= "talvez" "se" <expressão> "ou" <bloco> <lista_else_if>
                   | "nunca" <bloco>
                   | ε
 
-<declaração_while> ::= "parecer" "(" <expressão> ")" <bloco>
+<declaração_while> ::= "parecer" "se" <expressão> "ou" <bloco>
 
 <expressão> ::= <expressão_de_igualdade>
 
@@ -153,7 +153,7 @@ Através desses tokens é possível montar qualquer código em **CodeTelling** s
 <fator> ::= <NUM> 
           | <STR> 
           | <referência_de_variável> 
-          | "(" <expressão> ")"
+          | "se" <expressão> "ou"
 
 <referência_de_variável> ::= "esse" <variável>
                            | "essa" <variável>
@@ -176,7 +176,7 @@ Através desses tokens é possível montar qualquer código em **CodeTelling** s
         | "nojo"
         | <dígito>+
 
-<STR> ::= "pois" <conteúdo_da_string> "nada"
+<STR> ::= "pois"|"nada" <conteúdo_da_string> "pois"|"nada"
 
 <conteúdo_da_string> ::= <caractere> | <caractere> <conteúdo_da_string>
 
