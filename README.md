@@ -207,7 +207,7 @@ A seguir, uma tabela que mapeia os tokens utilizados na linguagem CodeTelling pa
 | encontrar             | Operador de maior que                   | `>`                                                      |
 | esquecer              | Operador de igualdade                   | `==`                                                     |
 | proceder              | Operador de desigualdade                | `!=`                                                     |
-| esse / essa           | Prefixo para declaração de variáveis    | Nenhum equivalente direto; usado para declarar ou referenciar variáveis |
+| esse / essa           | Prefixo para referência de variáveis    | Nenhum equivalente direto; usado para referenciar variáveis |
 | aquele / aquela       | Tipos de dados int e str                | `int` e `char*` (para strings)                           |
 | sempre                | Estrutura condicional if                | `if`                                                     |
 | talvez                | Estrutura condicional else if           | `else if`                                                |
